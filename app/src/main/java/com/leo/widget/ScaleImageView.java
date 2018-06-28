@@ -52,7 +52,11 @@ public class ScaleImageView extends AppCompatImageView {
         Log.i("ScaleImageView", "width:" + width);
         Log.i("ScaleImageView", "height:" + height);
 
-        float h = width * scale;
+        float h = height;
+
+        if (scale > 0) {
+            h = width * scale;
+        }
 
         setMeasuredDimension(width, (int) h);
     }
